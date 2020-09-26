@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>CodePen Demo</title>
+
+    <meta name="robots" content="noindex">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div id="app">
+        initial-search="initialSearch"
+        <vue2-simple-datatable :data="data" :columns="columns" :includeFooter="true" v-on:export="exportHandler">
+            <table-column label="id" prop="id" type="selection" fixed="right"></table-column>
+            <table-column label="A" prop="a" :render-header="(self, data)=>{return data.label }" :filter="false"></table-column>
+            <table-column label="B" prop="b" width="100" fixed="left" :sortable="true" :filter="false"></table-column>
+            <table-column label="C" prop="c" width="100" fixed="left" :sortable="true" :render-cell="(self, data)=>{return data.row[data.column]}"></table-column>
+            <table-column label="D" prop="d" width="100" colspan="3" rowspan="2"></table-column>
+            <table-column label="E" prop="e" width="100"></table-column>
+            <table-column label="F" prop="f" width="300"></table-column>
+            <table-column label="H" prop="g" width="200"></table-column>
+            <table-column label="I" prop="i" width="300"></table-column>
+            <table-column label="K" prop="k" width="300" fixed="right"></table-column>
+            <span slot="a" slot-scope="{value}" style="font-style: italic">{{ value }}</span>
+            <template slot="tfoot">aaaaaaaa</template>
+            <template slot="theaderbefore">
+                <tr>
+                    <th colspan="10">aaaaaaaaaaaaaa</th>
+                </tr>
+            </template>
+            <template slot="theaderbeforeleft">
+              <tr>
+                  <th colspan="2">a</th>
+              </tr>
+            </template>
+            <template slot="theaderbeforeright">
+              <tr>
+                  <th colspan="2">a</th>
+              </tr>
+            </template>
+            <template slot="theaderafter">
+              <tr>
+                  <th colspan="10">aaaaaaaaaaaaaa</th>
+              </tr>
+            </template>
+            <template slot="theaderafterleft">
+              <tr>
+                  <th colspan="2">a</th>
+              </tr>
+            </template>
+            <template slot="theaderafterright">
+              <tr>
+                  <th colspan="2">a</th>
+              </tr>
+            </template>
+        </vue2-simple-datatable>
+
+    </div>
+    <!-- partial -->
+    <script src='./vue.min.js'></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
