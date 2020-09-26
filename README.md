@@ -21,7 +21,7 @@ const i18n = {
     filterBy: 'Suche nach \'{column}\'',        // default: 'Filter by {column}'
     export: 'Download'                          // default: 'Export'
 }
-
+```
 ### Table Slot
 
 |  Name  |  Description  |
